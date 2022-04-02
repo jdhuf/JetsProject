@@ -10,6 +10,7 @@ public class CargoPlane extends Jet implements CargoCarrier {
 		super(model, speed, range, price);
 
 	}
+	
 
 	@Override
 	public void loadCargo() {

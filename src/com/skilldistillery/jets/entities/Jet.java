@@ -21,8 +21,8 @@ public abstract class Jet {
 	}
 
 
-	public void fly() {
-		System.out.println("fly");
+	public static void fly() {
+		System.out.println("Fly all jets.");
 	}
 	
 	public String getModel() {

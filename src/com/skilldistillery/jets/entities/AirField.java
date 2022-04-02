@@ -76,31 +76,45 @@ public class AirField {
 	public void displayJets() {
 		for (int i = 0; i < jets.size(); i++) {
 			System.out.println(jets.get(i));
+			System.out.println();
 		}
 	}
 	
-	public void fly () {
-		System.out.println("Jet details:");
+	public void fly() {
+		System.out.println("flying from AirField");
 		System.out.println();
+		
 	}
 	
 	public void viewFastest () {
-		System.out.println("Fastest jet:");
+		System.out.println("Fastest jet: ");
+		System.out.println();
 	}
 	
 	public void viewLongestRange () {
-		
+		System.out.println("Longest range: ");
+		System.out.println();
+	}
+	
+	public void loadCargoJets () {
+		System.out.println("Loading cargo jets");
+		System.out.println();
 	}
 	
 	public void dogFight () {
-		
+		System.out.println("Dog Fight!");
+		System.out.println();
 	}
 	
 	public void addJet () {
+		System.out.println("Adding jet");
+		System.out.println();
 		
 	}
 	
 	public void removeJet () {
+		System.out.println("Removing jet");
+		System.out.println();
 		
 	}
 
