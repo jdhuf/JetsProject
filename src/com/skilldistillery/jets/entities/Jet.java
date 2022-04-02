@@ -22,7 +22,7 @@ public abstract class Jet {
 
 
 	public void fly() {
-		
+		System.out.println("fly");
 	}
 	
 	public String getModel() {
@@ -86,8 +86,8 @@ public abstract class Jet {
 	
 	}
 	
-	public void displayJet() {
-		String jetData = this.toString();
-		System.out.println(jetData);
-	}
+//	public void displayJet() {
+//		String jetData = this.toString();
+//		System.out.println(jetData);
+//	}
 }
