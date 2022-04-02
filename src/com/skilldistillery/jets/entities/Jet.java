@@ -8,36 +8,23 @@ public abstract class Jet {
 	private int range;
 	private long price;
 
-	public void fly() {
-
-	}
 
 	public Jet() {
 
 	}
 
 	public Jet(String model, double speed, int range, long price) {
-
+		this.model = model;
+		this.speed = speed;
+		this.range = range;
+		this.price = price;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(model, price, range, speed);
-	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Jet other = (Jet) obj;
-		return Objects.equals(model, other.model) && price == other.price && range == other.range
-				&& Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed);
+	public void fly() {
+		
 	}
-
+	
 	public String getModel() {
 		return model;
 	}
@@ -47,6 +34,10 @@ public abstract class Jet {
 	}
 
 	public double getSpeed() {
+		return speed;
+	}
+	
+	public double getSpeedinMach() {		
 		return speed;
 	}
 
@@ -69,5 +60,34 @@ public abstract class Jet {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(model, price, range, speed);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jet other = (Jet) obj;
+		return Objects.equals(model, other.model) && price == other.price && range == other.range
+				&& Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed);
+	}
+	
+	@Override
+	public String toString() {
+		String output = "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
+		return output;
+	
+	}
+	
+	public void displayJet() {
+		String jetData = this.toString();
+		System.out.println(jetData);
+	}
 }

@@ -1,4 +1,4 @@
-PassengerJet,AmericanAirlines,301,100,12000
+PassengerJet,UPS,301,100,12000
 CargoPlane,UPS,200,100,12000
 CargoPlane,FedEx,250,200,12000
 FighterJet,F16,700,400,20012345
