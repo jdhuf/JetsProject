@@ -15,28 +15,24 @@ public class AirField {
 		jets = new ArrayList<>();
 
 		readFromFile("jets.txt");
-//		System.out.println(jets);
+
 	}
 
 	public List<Jet> readFromFile(String fn) {
 
-	//	List<Jet> readJets = new ArrayList<>();
+
 
 		try (BufferedReader bufIn = new BufferedReader(new FileReader(fn))) {
 			String line;
 
 			while ((line = bufIn.readLine()) != null) {
 				String[] jetInfo = line.split(",");
-		//		System.out.println(jetInfo);
 
 				String typeJet = jetInfo[0];
 				String model = jetInfo[1];
 				double speed = Double.parseDouble(jetInfo[2]);
 				int range = Integer.parseInt(jetInfo[3]);
 				long price = Long.parseLong(jetInfo[4]);
-
-				
-				
 
 				switch (jetInfo[0]) {
 
@@ -56,7 +52,9 @@ public class AirField {
 				}
 
 			}
-		} catch (IOException e) {
+		}
+		
+		catch (IOException e) {
 			System.err.println(e);
 		}
 
@@ -65,13 +63,15 @@ public class AirField {
 	}
 
 	public List<Jet> getJets() {
-	//	System.out.println(jets);
+
 		return jets;
 	}
 
 	public void setJets(List<Jet> jets) {
 		this.jets = jets;
 	}
+	
+
 
 	public void displayJets() {
 		for (int i = 0; i < jets.size(); i++) {
@@ -80,12 +80,19 @@ public class AirField {
 		}
 	}
 	
-	public void fly() {
-		System.out.println("flying from AirField");
+	public void flyAllJets() {
+		System.out.println("Flying High");
 		System.out.println();
+		for (int i = 0; i < jets.size(); i++) {
+			jets.get(i).fly();
+			System.out.println();
 		
+			}
+			
 	}
+
 	
+
 	public void viewFastest () {
 		System.out.println("Fastest jet: ");
 		System.out.println();
@@ -99,7 +106,13 @@ public class AirField {
 	public void loadCargoJets () {
 		System.out.println("Loading cargo jets");
 		System.out.println();
-	}
+		
+		jets.get(0);
+		
+		}
+		
+		
+
 	
 	public void dogFight () {
 		System.out.println("Dog Fight!");

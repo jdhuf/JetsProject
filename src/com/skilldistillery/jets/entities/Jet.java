@@ -21,9 +21,7 @@ public abstract class Jet {
 	}
 
 
-	public static void fly() {
-		System.out.println("Fly all jets.");
-	}
+	public abstract void fly();
 	
 	public String getModel() {
 		return model;
@@ -81,13 +79,9 @@ public abstract class Jet {
 	
 	@Override
 	public String toString() {
-		String output = "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
+		String output = "Model = " + model + ", Speed = " + speed + ", Range = " + range + ", Price = " + price;
 		return output;
 	
 	}
 	
-//	public void displayJet() {
-//		String jetData = this.toString();
-//		System.out.println(jetData);
-//	}
 }

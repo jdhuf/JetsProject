@@ -9,7 +9,6 @@ public class JetsApplication {
 
 	private AirField af = new AirField();
 	private Scanner sc = new Scanner(System.in);
-	// private List<Jet> jetFleet = af.getJets();
 
 	public static void main(String[] args) {
 		JetsApplication jetsApp = new JetsApplication();
@@ -18,8 +17,7 @@ public class JetsApplication {
 	}
 
 	private void launch() {
-		// af.readFromFile("jets.txt");
-		// System.out.println(af.getJets());
+
 		displayUserMenu();
 
 	}
@@ -45,7 +43,8 @@ public class JetsApplication {
 			sc.nextLine();
 
 			if (menuSelection.equals("1")) {
-
+				System.out.println("List of Jets");
+				System.out.println();
 				af.displayJets();
 
 				continue;
@@ -54,7 +53,7 @@ public class JetsApplication {
 
 			if (menuSelection.equals("2")) {
 
-				af.fly();
+				af.flyAllJets();
 
 				continue;
 			}

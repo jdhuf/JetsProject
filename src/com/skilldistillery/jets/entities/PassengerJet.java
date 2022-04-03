@@ -11,4 +11,10 @@ public class PassengerJet extends Jet {
 
 	}
 
+	@Override
+	public void fly() {
+		System.out.println("Just a normal passenger jet flying.");
+		
+	}
+
 }
