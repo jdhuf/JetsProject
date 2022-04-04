@@ -118,6 +118,22 @@ public class AirField {
 		System.out.println("Fastest jet: ");
 		System.out.println();
 		
+		double maxSpeed = jets.get(0).getSpeed();
+		
+		double currentSpeed = 0.0;
+		
+		for (int i = 0; i < jets.size(); i++) {
+			
+			currentSpeed = jets.get(i).getSpeed();
+			if (currentSpeed > maxSpeed) {
+				maxSpeed = currentSpeed;
+				if (maxSpeed == jets.get(i).getSpeed()) {
+					System.out.println(jets.get(i));
+					System.out.println();
+					break;
+				}
+			}
+		}
 		
 	}
 	
