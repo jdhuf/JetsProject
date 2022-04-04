@@ -78,7 +78,7 @@ public class AirField {
 
 	public void displayJets() {
 		for (int i = 0; i < jets.size(); i++) {
-			System.out.println(jets.get(i));
+			System.out.println((i+1) + ": " + jets.get(i));
 			System.out.println();
 			
 //			System.out.println(jets.get(0).getType());
@@ -210,20 +210,67 @@ public class AirField {
 	}
 	
 	public void addJet () {
-		System.out.println("Adding jet");
-		System.out.println();
-
-
-			String type = null;
-			String model = null;
-			double speed = 0.0;
-			int range = 0;
-			long price = 0;
+			System.out.println("Follow the instructions below to build your jet.");
+			System.out.println();
 			
-
+		
+			System.out.println("Enter jet model.");
+			System.out.println();
 			
-			PassengerJet passJet = new PassengerJet(type, model, speed, range, price);
-			jets.add(passJet);
+			String model = sc.next();
+			sc.nextLine();
+			
+			System.out.println("Enter a number for jet speed in MPH.");
+			System.out.println();
+			
+			double speed = sc.nextDouble();
+			sc.nextLine();
+			
+			System.out.println("Enter an integer number for range in miles.");
+			System.out.println();
+			
+			int range = sc.nextInt();
+			sc.nextLine();
+			
+			System.out.println("Enter a number for jet price.");
+			System.out.println();
+			
+			long price = sc.nextLong();
+			sc.nextLine();
+		
+			System.out.println("Enter a number from the list below to choose jet type.");
+			System.out.println();
+			System.out.println("1: Passenger \t 2: Cargo Plane \t 3: Fighter Jet");
+			
+			int numType = sc.nextInt();
+			sc.nextLine();
+			
+			if (numType == 1) {
+				String type = "Passenger";
+				PassengerJet custJet = new PassengerJet(type, model, speed, range, price);
+				jets.add(custJet);
+				
+			}
+			
+			if (numType == 2) {
+				String type = "Cargo Plane";
+				PassengerJet custJet = new PassengerJet(type, model, speed, range, price);
+				jets.add(custJet);
+				
+			}
+			
+			if (numType == 3) {
+				String type = "Fighter Jet";
+				PassengerJet custJet = new PassengerJet(type, model, speed, range, price);
+				jets.add(custJet);
+			}
+			
+			
+			System.out.println();
+			}
+
+		
+	
 //			switch (jetInfo[0]) {
 //
 //			case "Passenger Jet":
@@ -240,12 +287,25 @@ public class AirField {
 //				break;
 //		
 		
-	}
+	
 	
 	public void removeJet () {
-		System.out.println("Removing jet");
+		System.out.println("Please choose the number of the jet you would like to remove.");
 		System.out.println();
+		
+		for (int i = 0; i < jets.size(); i++) {
+			System.out.println((i+1) + " " + jets.get(i));
+		}
+		
+
+		int numToDelete = sc.nextInt();
+		
+				jets.remove(numToDelete - 1);
+		
+			
+			
+		}
 		
 	}
 
-}
+
