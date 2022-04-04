@@ -47,7 +47,7 @@ public class JetsApplication {
 				System.out.println();
 				af.displayJets();
 				
-		//		af.iterateJets();
+			
 
 				continue;
 

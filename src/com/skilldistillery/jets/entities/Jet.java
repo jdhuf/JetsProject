@@ -90,31 +90,6 @@ public abstract class Jet {
 		Jet other = (Jet) obj;
 		return Objects.equals(type, other.type) && Objects.equals(model, other.model) && Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed) && price == other.price && range == other.range
 				&& price == other.price;
-	}
-	
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(type, model, price, range, speed);
-//	}
-//	
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Jet other = (Jet) obj;
-//		return Objects.equals(model, other.model) && price == other.price && range == other.range
-//				&& Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed);
-//	}
-//	
-//	@Override
-//	public String toString() {
-//		String output = "Model = " + model + ", Speed = " + speed + ", Range = " + range + ", Price = " + price;
-//		return output;
-//	
-//	}
+	}	
 	
 }
