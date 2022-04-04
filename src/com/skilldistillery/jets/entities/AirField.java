@@ -200,6 +200,13 @@ public class AirField {
 	public void dogFight () {
 		System.out.println("Dog Fight!");
 		System.out.println();
+		
+		for (int i = 0; i < jets.size(); i++)
+			if (jets.get(i).getType().equals("Fighter Jet")) {
+				
+				System.out.println(jets.get(i));
+				System.out.println();
+			}
 	}
 	
 	public void addJet () {
