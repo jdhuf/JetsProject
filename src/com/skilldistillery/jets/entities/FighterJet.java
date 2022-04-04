@@ -6,8 +6,8 @@ public class FighterJet extends Jet implements CombatReady {
 
 	}
 
-	public FighterJet(String model, double speed, int range, long price) {
-		super(model, speed, range, price);
+	public FighterJet(String type, String model, double speed, int range, long price) {
+		super(type, model, speed, range, price);
 
 	}
 
@@ -20,7 +20,7 @@ public class FighterJet extends Jet implements CombatReady {
 
 	@Override
 	public void fly() {
-		System.out.println("Vroom, Fight, Fight, Fight!");
+		System.out.println("Model: " + this.getModel() + ", Speed: " + this.getSpeed() + ", Range: " + this.getRange() + ", Price: " + this.getPrice() + ", Time Can Fly: " + (this.getSpeed() * this.getRange()));
 	}
 
 }

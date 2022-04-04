@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Scanner;
 
 public class AirField {
-
+	private Scanner sc = new Scanner(System.in);
 	private List<Jet> jets;// fleet
 
 	public AirField() {
@@ -18,7 +20,7 @@ public class AirField {
 
 	}
 
-	public List<Jet> readFromFile(String fn) {
+	public void readFromFile(String fn) {
 
 
 
@@ -28,7 +30,7 @@ public class AirField {
 			while ((line = bufIn.readLine()) != null) {
 				String[] jetInfo = line.split(",");
 
-				String typeJet = jetInfo[0];
+				String type = jetInfo[0];
 				String model = jetInfo[1];
 				double speed = Double.parseDouble(jetInfo[2]);
 				int range = Integer.parseInt(jetInfo[3]);
@@ -37,15 +39,15 @@ public class AirField {
 				switch (jetInfo[0]) {
 
 				case "Passenger Jet":
-					PassengerJet passJet = new PassengerJet(model, speed, range, price);
+					PassengerJet passJet = new PassengerJet(type, model, speed, range, price);
 					jets.add(passJet);
 					break;
 				case "Cargo Plane":
-					CargoPlane cargoPl = new CargoPlane(model, speed, range, price);
+					CargoPlane cargoPl = new CargoPlane(type, model, speed, range, price);
 					jets.add(cargoPl);
 					break;
 				case "Fighter Jet":
-					FighterJet fightJet = new FighterJet(model, speed, range, price);
+					FighterJet fightJet = new FighterJet(type, model, speed, range, price);
 					jets.add(fightJet);
 					break;
 
@@ -58,7 +60,7 @@ public class AirField {
 			System.err.println(e);
 		}
 
-		return jets;
+
 
 	}
 
@@ -77,6 +79,12 @@ public class AirField {
 		for (int i = 0; i < jets.size(); i++) {
 			System.out.println(jets.get(i));
 			System.out.println();
+			
+//			System.out.println(jets.get(0).getType());
+//			System.out.println(jets.get(0).getModel());
+//			System.out.println(jets.get(0).getSpeed());
+//			System.out.println(jets.get(0).getRange());
+//			System.out.println(jets.get(0).getPrice());
 		}
 	}
 	
@@ -91,11 +99,26 @@ public class AirField {
 			
 	}
 
+	//Test Code
+//	public void iterateJets() {
+//	//	ListIterator<Jet> jetsListIterator = jets.listIterator();
+//	//	while (jetsListIterator.hasNext()) {
+//		//	System.out.println(jetIterator.next());
+//			
+//				System.out.println(jets.get(2).getSpeed());
+//			}
+//			
+//		}
+			
+		
+	
 	
 
 	public void viewFastest () {
 		System.out.println("Fastest jet: ");
 		System.out.println();
+		
+		
 	}
 	
 	public void viewLongestRange () {
@@ -106,8 +129,9 @@ public class AirField {
 	public void loadCargoJets () {
 		System.out.println("Loading cargo jets");
 		System.out.println();
+		System.out.println(jets.get(0).getType());
 		
-		jets.get(0);
+
 		
 		}
 		
@@ -122,6 +146,33 @@ public class AirField {
 	public void addJet () {
 		System.out.println("Adding jet");
 		System.out.println();
+
+
+			String type = null;
+			String model = null;
+			double speed = 0.0;
+			int range = 0;
+			long price = 0;
+			
+
+			
+			PassengerJet passJet = new PassengerJet(type, model, speed, range, price);
+			jets.add(passJet);
+//			switch (jetInfo[0]) {
+//
+//			case "Passenger Jet":
+//				PassengerJet passJet = new PassengerJet(model, speed, range, price);
+//				jets.add(passJet);
+//				break;
+//			case "Cargo Plane":
+//				CargoPlane cargoPl = new CargoPlane(model, speed, range, price);
+//				jets.add(cargoPl);
+//				break;
+//			case "Fighter Jet":
+//				FighterJet fightJet = new FighterJet(model, speed, range, price);
+//				jets.add(fightJet);
+//				break;
+//		
 		
 	}
 	

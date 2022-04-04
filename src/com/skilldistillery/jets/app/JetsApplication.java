@@ -46,6 +46,8 @@ public class JetsApplication {
 				System.out.println("List of Jets");
 				System.out.println();
 				af.displayJets();
+				
+		//		af.iterateJets();
 
 				continue;
 

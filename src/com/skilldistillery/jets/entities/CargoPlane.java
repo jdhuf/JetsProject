@@ -2,12 +2,12 @@ package com.skilldistillery.jets.entities;
 
 public class CargoPlane extends Jet implements CargoCarrier {
 
-	public CargoPlane() {
+	public CargoPlane () {
 
 	}
 
-	public CargoPlane(String model, double speed, int range, long price) {
-		super(model, speed, range, price);
+	public CargoPlane(String type, String model, double speed, int range, long price) {
+		super(type, model, speed, range, price);
 
 	}
 	
@@ -19,7 +19,7 @@ public class CargoPlane extends Jet implements CargoCarrier {
 
 	@Override
 	public void fly() {
-		System.out.println("I carry heavy things.");
+		System.out.println("Model: " + this.getModel() + ", Speed: " + this.getSpeed() + ", Range: " + this.getRange() + ", Price: " + this.getPrice() + ", Time Can Fly: " + (this.getSpeed() * this.getRange()));
 		
 	}
 
