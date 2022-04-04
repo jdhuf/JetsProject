@@ -1,5 +1,5 @@
 Passenger Jet,AA 757,301,100,12000
 Cargo Plane,UPS Airbus,200,100,13000
-Cargo Plane,FedEx Cessna,8000,250,200,12000
+Cargo Plane,FedEx Cessna,80,250,200,12000
 Fighter Jet,F16,700,400,20012345
 Fighter Jet,F35,801,350,30012345

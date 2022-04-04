@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -100,18 +101,24 @@ public class AirField {
 	}
 
 	//Test Code
-//	public void iterateJets() {
-//	//	ListIterator<Jet> jetsListIterator = jets.listIterator();
-//	//	while (jetsListIterator.hasNext()) {
-//		//	System.out.println(jetIterator.next());
-//			
-//				System.out.println(jets.get(2).getSpeed());
-//			}
-//			
-//		}
+	public void iterateJets() {
+		ListIterator<Jet> jetsListIterator = jets.listIterator();
+		while (jetsListIterator.hasNext()) {
+			System.out.println(jetsListIterator.next());
 			
+				System.out.println(jets.get(2).getSpeed());
+			}
+			
+		}
+			
+	public void viewFastestJet () {
 		
-	
+//		for (int i = 0; i < jets.size(); i++) {
+//		Collections.sort(jets.get(i).getSpeed());
+		
+	}
+		
+	//}
 	
 
 	public void viewFastest () {
@@ -122,12 +129,43 @@ public class AirField {
 		
 		double currentSpeed = 0.0;
 		
+		
+		
 		for (int i = 0; i < jets.size(); i++) {
 			
 			currentSpeed = jets.get(i).getSpeed();
+			
 			if (currentSpeed > maxSpeed) {
-				maxSpeed = currentSpeed;
-				if (maxSpeed == jets.get(i).getSpeed()) {
+				
+				maxSpeed = jets.get(i).getSpeed();
+			
+				}
+			
+			
+			System.out.println();
+			
+
+			 }
+		
+	
+	}
+		
+	
+	
+	public void viewLongestRange () {
+		System.out.println("Longest range: ");
+		System.out.println();
+		
+		int maxRange = jets.get(0).getRange();
+		
+		int currentRange = 0;
+		
+		for (int i = 0; i < jets.size(); i++) {
+			
+			currentRange = jets.get(i).getRange();
+			if (currentRange > maxRange) {
+				maxRange = currentRange;
+				jets.get(i).getRange();
 					System.out.println(jets.get(i));
 					System.out.println();
 					break;
@@ -135,21 +173,26 @@ public class AirField {
 			}
 		}
 		
-	}
-	
-	public void viewLongestRange () {
-		System.out.println("Longest range: ");
-		System.out.println();
-	}
+
 	
 	public void loadCargoJets () {
 		System.out.println("Loading cargo jets");
 		System.out.println();
-		System.out.println(jets.get(0).getType());
 		
-
+		
+//		ListIterator<Jet> jetsListIterator = jets.listIterator();
+//		while (jetsListIterator.hasNext()) {
+//			System.out.println(jetsListIterator.next());
+			for (int i = 0; i < jets.size(); i++)
+				if (jets.get(i).getType().equals("Cargo Plane")) {
+					
+					System.out.println(jets.get(i));
+					System.out.println();
+				}
 		
 		}
+		
+		
 		
 		
 

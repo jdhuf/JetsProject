@@ -71,7 +71,7 @@ public abstract class Jet {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(type, model, price, range, speed);
+		return Objects.hash(type, model, speed, range, price);
 	}
 
 	@Override
@@ -88,8 +88,8 @@ public abstract class Jet {
 		if (getClass() != obj.getClass())
 			return false;
 		Jet other = (Jet) obj;
-		return Objects.equals(type, other.type) && Objects.equals(model, other.model) && price == other.price && range == other.range
-				&& Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed);
+		return Objects.equals(type, other.type) && Objects.equals(model, other.model) && Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed) && price == other.price && range == other.range
+				&& price == other.price;
 	}
 	
 //	@Override
